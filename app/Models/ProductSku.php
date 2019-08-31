@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\InternalException;
+use Illuminate\Database\Eloquent\Model;
 
 class ProductSku extends Model
 {

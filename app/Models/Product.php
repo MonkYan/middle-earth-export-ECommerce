@@ -8,8 +8,8 @@ use Illuminate\Support\Str;
 class Product extends Model
 {
     protected $fillable = [
-                    'title', 'description', 'image', 'categoryid', 'on_sale',
-                    'rating', 'sold_count', 'review_count', 'price'
+        'title', 'description', 'image', 'categoryid', 'on_sale',
+        'rating', 'sold_count', 'review_count', 'price'
     ];
     protected $casts = [
         'on_sale' => 'boolean', // on_sale 是一个布尔类型的字段
@@ -33,4 +33,5 @@ class Product extends Model
         }
         return \Storage::disk('public')->url($this->attributes['image']);
     }
+    //
 }
