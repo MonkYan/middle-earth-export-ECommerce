@@ -1,6 +1,15 @@
+<link rel="stylesheet" href="{{ URL::asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/meanmenu.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/normalize.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
+
+
 @extends('layouts.app')
 @section('title', 'Product List')
-
 @section('content')
     <div class="wrapper">
         <section class="slidebar">
@@ -11,7 +20,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" style="background-image: url('assets/images/slider/slider01-1.jpg')">
+                    <div class="carousel-item active" style="background-image: url('/public/images/slider/slider01-1.jpg')">
                         <div class="carousel_caption">
                             <h1>Appearance</h1>
                             <h2>Classic Design For Office</h2>
@@ -19,7 +28,7 @@
                             <a href="shop.html">View Now</a>
                         </div>
                     </div>
-                    <div class="carousel-item" style="background-image: url('assets/images/slider/slider01-2.jpg')">
+                    <div class="carousel-item" style="background-image: url('/public/images/slider/slider01-2.jpg')">
                         <div class="carousel_caption">
                             <h1>Megastore</h1>
                             <h2>Design Event on Pixel Mart</h2>
@@ -27,7 +36,7 @@
                             <a href="shop.html">More View</a>
                         </div>
                     </div>
-                    <div class="carousel-item" style="background-image: url('assets/images/slider/slider01-3.jpg')">
+                    <div class="carousel-item" style="background-image: url('/public/images/slider/slider01-3.jpg')">
                         <div class="carousel_caption">
                             <h1>Clearance</h1>
                             <h2>Retail Design Show Event</h2>
@@ -211,7 +220,7 @@
                     </div>
                 </div>
             </div>
-            <div class="category-bar-two">
+            <div class="category-bar-three">
                 <div class="titlebar">
                     <div class="title">
                         <h1><a href="{{ route('products.indexhealth') }}">Health</a></h1>
@@ -245,8 +254,8 @@
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-12 px-0">
-                            <div class="category-item">
-                                @foreach($category2->products as $product)
+                            <div class="row products-list">
+                                @foreach($category1->products as $product)
                                     <div class="col-3 product-item">
                                         <div class="product-content">
                                             <div class="top">
@@ -256,7 +265,9 @@
                                                     </a>
                                                 </div>
                                                 <div class="price"><b>$</b>{{ $product->price }}</div>
-                                                <div class="title"><a href="{{ route('products.show', ['product' => $product->id]) }}">{{ $product->title }}</a></div>
+                                                <div class="title">
+                                                    <a href="{{ route('products.show', ['product' => $product->id]) }}">{{ $product->title }}</a>
+                                                </div>
                                             </div>
                                             <div class="bottom">
                                                 <div class="sold_count">Quantity of sale <span>{{ $product->sold_count }}</span></div>
@@ -273,7 +284,7 @@
             <div class="category-bar-three">
                 <div class="titlebar">
                     <div class="title">
-                        <h1><a href="{{ route('products.indexothers') }}">Others</a></h1>
+                        <h1><a href="{{ route('products.indexhealth') }}">Health</a></h1>
                     </div>
                     <div class="next-back">
                         <span><a href="shop.html">View All</a></span>
@@ -304,22 +315,24 @@
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-12 px-0">
-                            <div class="category-item">
-                                @foreach($category3->products as $product)
+                            <div class="row products-list">
+                                @foreach($category1->products as $product)
                                     <div class="col-3 product-item">
-                                        <div class="product-content">
-                                            <div class="top">
-                                                <div class="img">
+                                        <div class="product-grid">
+                                            <div class="product-image">
                                                     <a href="{{ route('products.show', ['product' => $product->id]) }}">
-                                                        <img src="{{ $product->image_url }}" alt="">
+                                                        <img class="pic-1" src="{{ $product->image_url }}" alt="Product image">
                                                     </a>
-                                                </div>
-                                                <div class="price"><b>$</b>{{ $product->price }}</div>
-                                                <div class="title"><a href="{{ route('products.show', ['product' => $product->id]) }}">{{ $product->title }}</a></div>
+                                                    <ul class="social">
+                                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#" data-tip="Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                                        <li><a href="#" data-tip="Compare"><i class="fas fa-exchange-alt"></i></a></li>
+                                                    </ul>
                                             </div>
-                                            <div class="bottom">
-                                                <div class="sold_count">Quantity of sale <span>{{ $product->sold_count }}</span></div>
-                                                <div class="review_count">Review <span>{{ $product->review_count }}</span></div>
+                                            <h3 class="title"><a href="{{ route('products.show', ['product' => $product->id]) }}">{{ $product->title }}</a></h3>
+                                            <div class="product-content">
+                                                <div class="price"><b>$</b>{{ $product->price }}</div>
+                                                <a class="add-to-cart" href="cart.html">Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
@@ -330,18 +343,5 @@
                 </div>
             </div>
         </section>
-
-  </div>
-
-@section('scriptsAfterJs')
-  <script>
-    var filters = {!! json_encode($filters) !!};
-    $(document).ready(function () {
-      $('.search-form input[name=search]').val(filters.search);
-      $('.search-form select[name=order]').on('change', function() {
-        $('.search-form').submit();
-      });
-    })
-  </script>
-@endsection
+    </div>
 @endsection

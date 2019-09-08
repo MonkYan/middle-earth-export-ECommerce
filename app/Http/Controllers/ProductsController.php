@@ -41,7 +41,7 @@ class ProductsController extends Controller
             }
         }
 
-        $products = $builder->paginate(16);
+        $products = $builder->paginate(6);
         $category1 = Category::find(1);
         $category2 = Category::find(2);
         $category3 = Category::find(3);
@@ -92,7 +92,7 @@ class ProductsController extends Controller
             }
         }
 
-        $products = $builder->paginate();
+        $products = $builder->paginate(6);
 
 
 
@@ -138,7 +138,7 @@ class ProductsController extends Controller
             }
         }
 
-        $products = $builder->paginate();
+        $products = $builder->paginate(6);
 
 
 
@@ -185,7 +185,7 @@ class ProductsController extends Controller
             }
         }
 
-        $products = $builder->paginate();
+        $products = $builder->paginate(6);
 
 
 
@@ -253,7 +253,7 @@ class ProductsController extends Controller
 
     public function favorites(Request $request)
     {
-        $products = $request->user()->favoriteProducts()->paginate(16);
+        $products = $request->user()->favoriteProducts()->paginate(6);
 
         return view('products.favorites', ['products' => $products]);
     }
