@@ -204,7 +204,7 @@ class ProductsController extends Controller
     public function show(Product $product, Request $request)
     {
         if (!$product->on_sale) {
-            throw new InvalidRequestException('Product no on sale');
+            throw new InvalidRequestException('Product not on sale');
         }
 
         $favored = false;

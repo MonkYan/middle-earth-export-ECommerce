@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="logo">
-                        <a href="index.html"><img src="/public/upload/images/logo.png" alt="Logo" /></a>
+                        <a href="index.html"><img src="{{url::asset('images/logo.png')}}" alt="Logo" /></a>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-3 col-md-2 col-sm-12">

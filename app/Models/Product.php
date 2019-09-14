@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 
 class Product extends Model
 {
+    //
     protected $fillable = [
         'title', 'description', 'image', 'categoryid', 'on_sale',
         'rating', 'sold_count', 'review_count', 'price'
@@ -34,4 +35,6 @@ class Product extends Model
         return \Storage::disk('public')->url($this->attributes['image']);
     }
     //
+
+
 }
