@@ -1,16 +1,24 @@
-<link rel="stylesheet" href="/public/css/bootstrap.min.css">
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
-<!-- Global CSS -->
-<link rel="stylesheet" href="/public/css/normalize.css">
-<link rel="stylesheet" href="/public/css/main.css">
-<!-- Jquery ui -->
-<link rel="stylesheet" href="/public/css/jquery-ui.css">
-<!-- Responsive Menu CSS -->
-<link rel="stylesheet" href="/public/css/meanmenu.css">
-<!-- Theme CSS -->
-<link rel="stylesheet" href="/public/css/styles.css">
+{{--<link rel="stylesheet" href="/public/css/bootstrap.min.css">--}}
+{{--<!-- Google Fonts -->--}}
+{{--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">--}}
+{{--<link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">--}}
+{{--<!-- Global CSS -->--}}
+{{--<link rel="stylesheet" href="/public/css/normalize.css">--}}
+{{--<link rel="stylesheet" href="/public/css/main.css">--}}
+{{--<!-- Jquery ui -->--}}
+{{--<link rel="stylesheet" href="/public/css/jquery-ui.css">--}}
+{{--<!-- Responsive Menu CSS -->--}}
+{{--<link rel="stylesheet" href="/public/css/meanmenu.css">--}}
+{{--<!-- Theme CSS -->--}}
+{{--<link rel="stylesheet" href="/public/css/styles.css">--}}
+<link rel="stylesheet" href="{{ URL::asset('css/all.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/meanmenu.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/normalize.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
 
 
     <header class="header">
@@ -18,7 +26,8 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="logo">
-                        <a href="index.html"><img src="{{url::asset('images/logo.png')}}" alt="Logo" /></a>
+                        <a href="index.html"><img src="{{URL::asset('images/logo.png')}}" alt="Logo" /></a>
+{{--                        <a href="index.html"><img src="{{asset('images/logo.png')}}" alt="Logo" /></a>--}}
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-3 col-md-2 col-sm-12">

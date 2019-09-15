@@ -1,12 +1,3 @@
-<link rel="stylesheet" href="{{ URL::asset('css/all.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/meanmenu.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/normalize.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
-
 
 @extends('layouts.app')
 @section('title', 'Order Detail')

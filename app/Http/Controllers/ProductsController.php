@@ -215,18 +215,22 @@ class ProductsController extends Controller
             $favored = boolval($user->favoriteProducts()->find($product->id));
         }
 
-        $reviews = OrderItem::query()
-            ->with(['order.user', 'productSku']) // Preload association
-            ->where('product_id', $product->id)
-            ->whereNotNull('reviewed_at') // Filter out the evaluated
-            ->orderBy('reviewed_at', 'desc') // Reversed by evaluation time
-            ->limit(10) // get 10 of them
-            ->get();
+
+
+
+//        $reviews = OrderItem::query()
+//            ->with(['order.user', 'productSku']) // Preload association
+//            ->where('product_id', $product->id)
+//            ->whereNotNull('reviewed_at') // Filter out the evaluated
+//            ->orderBy('reviewed_at', 'desc') // Reversed by evaluation time
+//            ->limit(10) // get 10 of them
+//            ->get();
+
 
         return view('products.show', [
             'product' => $product,
             'favored' => $favored,
-            'reviews' => $reviews
+//            'reviews' => $reviews
         ]);
     }
 

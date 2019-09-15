@@ -102,7 +102,7 @@
             <div class="category-bar-one">
                 <div class="titlebar">
                     <div class="title">
-                        <h1><a href="{{ route('products.indexhealth') }}">Milk Powder</a></h1>
+                        <h1><a href="{{ route('products.indexmilk') }}">Milk Powder</a></h1>
                     </div>
                     <div class="next-back">
                         <span><a href="shop.html">View All</a></span>
@@ -120,12 +120,12 @@
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <div class="arrival-item">
-                                                <img class="pic-1" src="{{url::asset('images/products/milkpowder/aptamil_pro_futura_01.png')}}" alt="Product image">
+                                                <img class="pic-1" src="{{url::asset('images/products/milkpowder/milkpowder_1.jpg')}}" alt="Product image">
                                             </div>
                                         </div>
                                         <div class="carousel-item">
                                             <div class="arrival-item">
-                                                <img cla ss="pic-1" src="{{url::asset('images/products/milkpowder/aptamil-gold-ha-900g-aug2018.png')}}" alt="Product image">
+                                                <img class="pic-2" src="{{url::asset('images/products/milkpowder/milkpowerd_2.jpg')}}" alt="Product image">
                                             </div>
                                         </div>
                                     </div>
@@ -133,9 +133,10 @@
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-12 px-0">
+{{--                            <h1>tseting</h1>--}}
                             <div class="row products-list">
                                 @foreach($category1->products as $product)
-                                    <div class="col-3 product-item">
+                                    <div class="col-4 product-item">
                                         <div class="product-grid">
                                             <div class="product-image">
                                                 <a href="{{ route('products.show', ['product' => $product->id]) }}">

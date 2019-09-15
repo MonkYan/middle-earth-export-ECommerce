@@ -2,8 +2,132 @@
 @section('title', $product->title)
 
 @section('content')
+    <div class="shop-detail">
+        <div class="breadcrumb-area">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><span>Shop</span></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-12">
+                <div class="product-detail-img">
+                    <div class="large-image">
+                        <div class="tab-content" id="myTabContent-1">
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab-1">
+                                <img src="{{ $product->image_url }}" alt="image">
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab-2">
+                                <img src="{{ $product->image_url }}" alt="image">
+                            </div>
+                            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-3">
+                                <img src="{{ $product->image_url }}" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thumb-img-tabs">
+                        <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="tab-1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true"><img src="{{ $product->image_url }}" alt="image" alt="Product image"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab-2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"><img src="{{ $product->image_url }}" alt="image" alt="Product image"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab-3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false"><img src="{{ $product->image_url }}" alt="image" alt="Product image"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-12">
+                <div class="product-detail-content">
+                    <div class="title">
+                        <h1>{{ $product->title }}</h1>
+                    </div>
+                    <div class="rating">
+                        <div class="star" title="Rating {{ $product->rating }}">Rating <span class="count">{{ str_repeat('★', floor($product->rating)) }}{{ str_repeat('☆', 5 - floor($product->rating)) }}</span></div>
+                        <a href="#">Add Your Rating</a>
+                    </div>
+
+                    <div class="price">${{ $product->price }}
+                    </div>
+                    <div class="desc">
+                        {{ $product->description }}
+                    </div>
+                    <div class="attribute">
+                        <p><span>Brands:</span>Lorem amet</p>
+                        <p><span>Product Code:</span>DU01512</p>
+                        <p><span>Stock:</span><span class="instock">In Stock</span></p>
+                    </div>
+                    <div class="skus">
+                        <label>Select</label>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            @foreach($product->skus as $sku)
+                                <label
+                                    class="btn sku-btn"
+                                    data-price="{{ $sku->price }}"
+                                    data-stock="{{ $sku->stock }}"
+                                    data-toggle="tooltip"
+                                    title="{{ $sku->description }}"
+                                    data-placement="bottom">
+                                    <input type="radio" name="skus" autocomplete="off" value="{{ $sku->id }}"> {{ $sku->title }}
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+{{--                    <div class="color">--}}
+{{--                        <p>Color<span>*</span></p>--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="#"><span class="red"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="green"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="orange"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="black"></span></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                    <div class="size">--}}
+{{--                        <p>Size<span>*</span></p>--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="#">S</a></li>--}}
+{{--                            <li><a href="#">M</a></li>--}}
+{{--                            <li><a href="#">L</a></li>--}}
+{{--                            <li><a href="#">XL</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+                    <div class="quantity">
+                        <label>Quantity:</label>
+                        <div class="cart-plus-minus">
+                            <input type="text" value="1">
+                            <div class="dec qtybutton">-</div>
+                            <div class="inc qtybutton">+</div>
+                        </div>
+                    </div>
+                    <div class="cart-options">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-exchange-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><button class="fa fa-heart">❤</button></li>
+                            <form action="#" class="cart-form">
+                                    <button class="btn theme-btn">Add To Cart</button>
+                                </form>
+                        </ul>
+                    </div>
+                    <div class="share-it">
+                        <ul>
+                            <li><label>Share it:</label></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 <div class="row">
-<div class="col-lg-10 offset-lg-1">
+<div class="col-xl-5 col-lg-5 col-12">
 <div class="card">
   <div class="card-body product-info">
     <div class="row">
@@ -71,15 +195,15 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($reviews as $review)
-            <tr>
-            <td>{{ $review->order->user->name }}</td>
-            <td>{{ $review->productSku->title }}</td>
-            <td>{{ str_repeat('★', $review->rating) }}{{ str_repeat('☆', 5 - $review->rating) }}</td>
-            <td>{{ $review->review }}</td>
-            <td>{{ $review->reviewed_at->format('Y-m-d H:i') }}</td>
-          </tr>
-          @endforeach
+{{--            @foreach($reviews as $review)--}}
+{{--            <tr>--}}
+{{--            <td>{{ $review->order->user->name }}</td>--}}
+{{--            <td>{{ $review->productSku->title }}</td>--}}
+{{--            <td>{{ str_repeat('★', $review->rating) }}{{ str_repeat('☆', 5 - $review->rating) }}</td>--}}
+{{--            <td>{{ $review->review }}</td>--}}
+{{--            <td>{{ $review->reviewed_at->format('Y-m-d H:i') }}</td>--}}
+{{--          </tr>--}}
+{{--          @endforeach--}}
         </tbody>
       </table>
         </div>
