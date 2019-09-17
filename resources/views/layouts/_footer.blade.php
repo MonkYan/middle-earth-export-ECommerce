@@ -1,16 +1,3 @@
-<link rel="stylesheet" href="/public/css/bootstrap.min.css">
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
-<!-- Global CSS -->
-<link rel="stylesheet" href="/public/css/normalize.css">
-<link rel="stylesheet" href="/public/css/main.css">
-<!-- Jquery ui -->
-<link rel="stylesheet" href="/public/css/jquery-ui.css">
-<!-- Responsive Menu CSS -->
-<link rel="stylesheet" href="/public/css/meanmenu.css">
-<!-- Theme CSS -->
-<link rel="stylesheet" href="/public/css/styles.css">
 
 <footer>
     <div class="container">
