@@ -134,9 +134,23 @@
                     <div class="head_right">
                         <div class="login_bar">
                             <ul>
+                                @guest
                                 <li><a href="{{ route('login') }}">Login</a></li>
                                 <li><a href="{{ route('register') }}">Register</a></li>
-                                <li class="user"><a href="{{ route('login') }}"><i class="fas fa-user"></i></a></li>
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ Auth::user()->name }}
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" id="logout" href="#"
+                                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
                                 <li class="search">
                                     <a href="#"><i class="fas fa-search"></i></a>
                                     <div class="search_bar">
