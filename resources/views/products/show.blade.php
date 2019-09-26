@@ -45,19 +45,70 @@
                     <div class="title">
                         <h1>{{ $product->title }}</h1>
                     </div>
-                    <div class="rating">
-                        <div class="star" title="Rating {{ $product->rating }}">Rating <span class="count">{{ str_repeat('★', floor($product->rating)) }}{{ str_repeat('☆', 5 - floor($product->rating)) }}</span></div>
-                        <a href="#">Add Your Rating</a>
-                    </div>
+
                     <div class="price">${{ $product->price }}
-                    </div>
-                    <div class="desc">
-                        {{ $product->description }}
                     </div>
                     <div class="attribute">
                         <p><span>Brands:</span>Lorem amet</p>
                         <p><span>Product Code:</span>DU01512</p>
                         <p><span>Stock:</span><span class="instock">In Stock</span></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-body product-info">
+                            <div class="row">
+                                <div class="col-5">
+                                    <img class="cover" src="{{ $product->image_url }}" alt="">
+                                </div>
+                                <div class="col-7">
+                                    <div class="title">{{ $product->title }}</div>
+                                    <div class="price"><label>Price</label><em>$</em><span>{{ $product->price }}</span></div>
+                                    <div class="sales_and_reviews">
+                                        <div class="sold_count">Total Sell <span class="count">{{ $product->sold_count }}</span></div>
+                                        <div class="review_count">Total Review <span class="count">{{ $product->review_count }}</span></div>
+                                        <div class="rating" title="Rating {{ $product->rating }}">Rating <span class="count">{{ str_repeat('★', floor($product->rating)) }}{{ str_repeat('☆', 5 - floor($product->rating)) }}</span></div>
+                                    </div>
+                                    <div class="skus">
+                                        <label>Select</label>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            @foreach($product->skus as $sku)
+                                                <label
+                                                    class="btn sku-btn"
+                                                    data-price="{{ $sku->price }}"
+                                                    data-stock="{{ $sku->stock }}"
+                                                    data-toggle="tooltip"
+                                                    title="{{ $sku->description }}"
+                                                    data-placement="bottom">
+                                                    <input type="radio" name="skus" autocomplete="off" value="{{ $sku->id }}"> {{ $sku->title }}
+                                                </label>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="cart_amount"><label>Qty</label><input type="text" class="form-control form-control-sm" value="1"><span></span><span class="stock"></span></div>
+                                    <div class="buttons">
+                                        @if($favored)
+                                            <button class="btn btn-danger btn-disfavor">Dislike</button>
+                                        @else
+                                            <button class="btn btn-success btn-favor">❤ Like</button>
+                                        @endif
+                                        <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="skus">
+                        <label>Select</label>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            @foreach($product->skus as $sku)
+                                <label
+                                    class="btn sku-btn"
+                                    data-price="{{ $sku->price }}"
+                                    data-stock="{{ $sku->stock }}"
+                                    data-toggle="tooltip"
+                                    title="{{ $sku->description }}"
+                                    data-placement="bottom">
+                                    <input type="radio" name="skus" autocomplete="off" value="{{ $sku->id }}"> {{ $sku->title }}
+                                </label>
+                            @endforeach
+                        </div>
                     </div>
                     <div class="skus">
                         <label>Select</label>
