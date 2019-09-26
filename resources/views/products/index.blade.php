@@ -11,6 +11,7 @@
 @extends('layouts.app')
 @section('title', 'Product List')
 @section('content')
+
     <div class="wrapper">
         <section class="slidebar">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
