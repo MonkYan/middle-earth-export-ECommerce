@@ -1,15 +1,4 @@
-
-<link rel="stylesheet" href="{{ URL::asset('css/all.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/meanmenu.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/normalize.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
-
-
-    <header class="header">
+ <header class="header">
         <div class="topcontain">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
@@ -134,17 +123,25 @@
                     <div class="head_right">
                         <div class="login_bar">
                             <ul>
+                                <!-- Login connection start -->
                                 @guest
                                 <li><a href="{{ route('login') }}">Login</a></li>
                                 <li><a href="{{ route('register') }}">Register</a></li>
                                 @else
+                                    <li class="nav-item">
+                                        <a class="nav-link mt-1" href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i></a>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60" class="img-responsive img-circle" width="30px" height="30px">
                                             {{ Auth::user()->name }}
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a href="{{ route('user_addresses.index') }}" class="dropdown-item">Shipping Address</a>
+                                            <a href="{{ route('orders.index') }}" class="dropdown-item">My Orders</a>
+                                            <a href="{{ route('products.favorites') }}" class="dropdown-item">Wish List</a>
                                             <a class="dropdown-item" id="logout" href="#"
-                                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
+                                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out</a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 {{ csrf_field() }}
                                             </form>

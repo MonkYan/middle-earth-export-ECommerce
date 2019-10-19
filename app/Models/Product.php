@@ -13,7 +13,7 @@ class Product extends Model
         'rating', 'sold_count', 'review_count', 'price'
     ];
     protected $casts = [
-        'on_sale' => 'boolean', // on_sale 是一个布尔类型的字段
+        'on_sale' => 'boolean', // on_sale 
     ];
     // 与商品SKU关联
     public function skus()
@@ -34,6 +34,8 @@ class Product extends Model
         }
         return \Storage::disk('public')->url($this->attributes['image']);
     }
+
+
     //
 
 

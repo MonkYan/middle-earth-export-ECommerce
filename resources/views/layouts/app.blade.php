@@ -10,7 +10,7 @@
     <title>@yield('title', 'Middle Earth Export') - Middle Earth</title>
 
     <!-- style -->
-{{--    <link href="{{ mix('css/app.css') }}" rel="stylesheet">--}}
+
     <link rel="stylesheet" href="{{ URL::asset('css/all.css') }}">
 
     <!-- Bootstrap v4.3.1 -->
@@ -34,12 +34,40 @@
 
     <!-- APP CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+{{--    <link href="{{ mix('css/app.css') }}" rel="stylesheet">--}}
 
     <script
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous">
     </script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+
+    <!-- Global JS -->
+    <script src="/public/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="/public/js/vendor/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/public/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="/public/js/popper.min.js"></script>
+    <script src="/public/js/plugins.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/jquery-ui.js"></script>
+    <script src="/public/js/jquery.meanmenu.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="/public/js/isotope.pkgd.min.js"></script>
+    <script src="/public/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/public/js/main.js"></script>
+    <!-- Google Map JS -->
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyBvEEMx3XDpByNzYNn0n62Zsq_sVYPx1zY"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+
+
+    </script>
+
 </head>
 
 <body>
@@ -51,7 +79,7 @@
         @include('layouts._footer')
     </div>
     <!-- JS script -->
-{{--    <script src="{{ mix('js/app.js') }}"></script>--}}
+    <script src="{{ mix('js/app.js') }}"></script>
     @yield('scriptsAfterJs')
 </body>
 </html>
